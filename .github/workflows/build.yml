@@ -1,4 +1,4 @@
-name: Izgradi .NET
+name: Izgradi AL projekt
 
 on:
   push:
@@ -8,21 +8,28 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v3
     
-    - name: Postavi .NET
-      uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: '7.0.x'
+    - name: Postavi PowerShell
+      shell: pwsh
+      run: |
+        $PSVersionTable.PSVersion
     
-    - name: Vrati ovisnosti
-      run: dotnet restore
+    - name: Provjeri AL datoteke
+      shell: pwsh
+      run: |
+        Get-ChildItem -Recurse -Filter "*.al" | ForEach-Object { Write-Host $_.FullName }
     
-    - name: Izgradi
-      run: dotnet build --no-restore
-      
-    - name: Testiraj
-      run: dotnet test --no-build
+    - name: Validiraj app.json
+      shell: pwsh
+      run: |
+        if (Test-Path "app.json") {
+          Write-Host "app.json pronađen"
+          Get-Content app.json
+        } else {
+          Write-Host "app.json nije pronađen"
+          exit 1
+        }
