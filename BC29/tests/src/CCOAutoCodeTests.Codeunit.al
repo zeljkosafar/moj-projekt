@@ -1,4 +1,4 @@
-codeunit 50040 "CCO Auto Code Tests"
+codeunit 50200 "CCO Auto Code Tests"
 {
     Subtype = Test;
 
