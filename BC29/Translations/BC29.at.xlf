@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="de-AT" original="BC29">
+    <body>
+      <group id="body">
+        <trans-unit id="TableExtension 50000 - Field 50000 - Property 1" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Auto Code</source>
+          <target state="translated">Automatikcode</target>
+        </trans-unit>
+        <trans-unit id="PageExtension 50000 - Control 1 - Property 2" size-unit="char" translate="yes" xml:space="preserve">
+          <source>This field displays the auto code for the customer.</source>
+          <target state="translated">Dieses Feld zeigt den Automatikcode des Kunden an.</target>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>

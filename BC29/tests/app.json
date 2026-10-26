@@ -1,0 +1,38 @@
+{
+  "id": "5e0d8e78-093a-41e9-afe3-0ee52abb0037",
+  "name": "BC29 Tests",
+  "publisher": "Default Publisher",
+  "version": "1.0.0.0",
+  "platform": "1.0.0.0",
+  "application": "29.0.0.0",
+  "dependencies": [
+    {
+      "id": "23de40a6-dfe8-4f80-80db-d70f83ce8caf",
+      "name": "Test Runner",
+      "publisher": "Microsoft",
+      "version": "29.0.0.0"
+    },
+    {
+      "id": "e7320ebb-08b3-4406-b1ec-b4927d3e280b",
+      "name": "Any",
+      "publisher": "Microsoft",
+      "version": "29.0.0.0"
+    },
+    {
+      "id": "14435994-2b31-4d29-852e-eb3978cfb9b3",
+      "name": "BC29",
+      "publisher": "Default Publisher",
+      "version": "1.0.0.0"
+    }
+  ],
+  "idRanges": [
+    {
+      "from": 50000,
+      "to": 50049
+    }
+  ],
+  "runtime": "18.0",
+  "features": [
+    "NoImplicitWith"
+  ]
+}

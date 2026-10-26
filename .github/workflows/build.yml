@@ -23,13 +23,19 @@ jobs:
       run: |
         Get-ChildItem -Recurse -Filter "*.al" | ForEach-Object { Write-Host $_.FullName }
     
-    - name: Validiraj app.json
+    - name: Validiraj app.json datoteke
       shell: pwsh
       run: |
-        if (Test-Path "app.json") {
-          Write-Host "app.json pronađen"
-          Get-Content app.json
-        } else {
-          Write-Host "app.json nije pronađen"
+        $appFiles = Get-ChildItem -Path . -Recurse -Filter "app.json" -File | Where-Object {
+          $_.FullName -notmatch '[\\/](\.git|\.alpackages|\.vscode)[\\/]'
+        }
+
+        if (-not $appFiles) {
+          Write-Host "Nije pronađen nijedan app.json"
           exit 1
+        }
+
+        foreach ($appFile in $appFiles) {
+          Get-Content -Raw $appFile.FullName | ConvertFrom-Json | Out-Null
+          Write-Host "Valjan app.json: $($appFile.FullName)"
         }
