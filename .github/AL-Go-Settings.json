@@ -5,5 +5,9 @@
   "projects": [
     "ALProjectBC27",
     "BC29"
+  ],
+  "CICDPushBranches": [
+    "main",
+    "BC29"
   ]
 }
